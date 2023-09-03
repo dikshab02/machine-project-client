@@ -1,0 +1,45 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+
+.machine-form {
+  width: 400px;
+  margin: 16px auto;
+  // font-size: 16px;
+}
+
+.machine-header,
+.machine-container p {
+  height: 50px;
+  background-color:rgb(43, 68, 122);
+  text-align: center;
+}
+
+.machine-header {
+  color: white;
+  padding: 15px;
+}
+
+.machine-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.machine p {
+  padding: 12px;
+}
+
+.machine input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}

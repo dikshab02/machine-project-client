@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+// /* You can add global styles to this file, and also import other style files */
+// @import  url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+// body {
+//     background: #456;
+//     font-family: 'Open Sans', sans-serif;
+// }
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.error {
+  color: red;
+}
+
+

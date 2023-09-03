@@ -1,0 +1,13 @@
+<div class="container-fluid" *ngIf="authService.isLoggedIn()">
+  <div class="add" *ngIf="!authService.isAdminCheck()">
+    <button mat-raised-button (click)="handleProject()">Add Project</button>
+    <button mat-raised-button (click)="logout()">Logout</button>
+  </div>
+  <div class="add" *ngIf="authService.isAdminCheck()">
+    <button mat-raised-button (click)="handleMachine()">Add Machine</button>
+    <button mat-raised-button (click)="logout()">Logout</button>
+  </div>
+</div>
+<div class="container-fluid" *ngIf="!authService.isLoggedIn()">
+  <h1>Login Form</h1>
+</div>

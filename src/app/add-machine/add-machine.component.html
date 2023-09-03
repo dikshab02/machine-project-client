@@ -1,0 +1,22 @@
+<div class="machine-form">
+  <h2 class="machine-header">Add Machine</h2>
+  <form [formGroup]="addMachineForm" class="machine-container" (ngSubmit)="addMachine()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Give machine name</mat-label>
+      <input matInput placeholder="Machine Name" formControlName="machineName">
+      <mat-hint class="error" *ngIf="addMachineForm.controls['machineName']?.touched && addMachineForm.controls['machineName']?.errors?.required">
+        Machine name is required
+      </mat-hint>
+    </mat-form-field>
+
+
+    <div class="example-ripple-container mat-elevation-z4"
+    matRipple
+    [matRippleColor]="color">
+    <button mat-raised-button>Save</button>
+
+</div>
+
+  </form>
+
+</div>

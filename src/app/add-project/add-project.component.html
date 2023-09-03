@@ -1,0 +1,51 @@
+<div class="project-form">
+  <h2 class="project-header">Add Project</h2>
+  <form *ngIf="projectForm" [formGroup]="projectForm" class="project-container" (ngSubmit)="addProject()">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Project Name</mat-label>
+      <input matInput type="text" formControlName="name" />
+      <mat-hint class="error" *ngIf="projectForm.controls['name']?.touched && projectForm.controls['name']?.errors">
+        Project name is required
+      </mat-hint>
+    </mat-form-field>
+
+    <p>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerStart" formControlName="startDate" placeholder="Choose start date">
+        <mat-datepicker-toggle matIconSuffix [for]="pickerStart"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStart></mat-datepicker>
+        <mat-hint class="error"
+          *ngIf="projectForm.controls['startDate']?.touched && projectForm.controls['startDate']?.errors">
+          Start date is required
+        </mat-hint>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field>
+        <input matInput [matDatepicker]="pickerEnd" formControlName="endDate" placeholder="Choose end date">
+        <mat-datepicker-toggle matIconSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEnd></mat-datepicker>
+        <mat-hint class="error"
+          *ngIf="projectForm.controls['endDate']?.touched && projectForm.controls['endDate']?.errors">
+          End date is required
+        </mat-hint>
+      </mat-form-field>
+    </p>
+
+    <mat-form-field>
+      <mat-label>Select machine</mat-label>
+      <mat-select formControlName="allocateMachine" name="machine">
+        <mat-option *ngFor="let machine of machines" [value]="machine._id">
+          {{machine.machineName}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div class="example-ripple-container mat-elevation-z4" matRipple [matRippleColor]="color">
+      <button class="save" mat-raised-button>Save</button>
+    </div>
+
+  </form>
+</div>
