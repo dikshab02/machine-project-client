@@ -2,6 +2,7 @@
   background-color: black;
   height: 40px;
   padding: 8px;
+  display: flex;
 }
 
 
@@ -15,5 +16,9 @@ h1 {
 
 .add {
   text-align: end;
+}
+
+.button-icon {
+  color: white;
 }
 

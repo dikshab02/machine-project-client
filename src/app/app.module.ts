@@ -17,7 +17,10 @@ import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon';
 import { CookieInterceptor } from './interceptor/cookie.interceptor';
+import { DayPilotModule } from "daypilot-pro-angular";
+import { MAT_COLOR_FORMATS, NGX_MAT_COLOR_FORMATS, NgxMatColorPickerModule } from '@angular-material-components/color-picker';
 
 @NgModule({
   declarations: [
@@ -42,11 +45,14 @@ import { CookieInterceptor } from './interceptor/cookie.interceptor';
     MatFormFieldModule,
     MatRippleModule,
     MatSelectModule,
-
+    MatIconModule,
+    DayPilotModule,
+    NgxMatColorPickerModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS, useClass: CookieInterceptor, multi:true
-  }],
+  },
+  { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

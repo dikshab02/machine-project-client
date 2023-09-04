@@ -1,30 +1,29 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { HttpCallService } from '../services/http-call.service';
 
 @Component({
   selector: 'app-page-header',
   templateUrl: './page-header.component.html',
-  styleUrls: ['./page-header.component.scss']
+  styleUrls: ['./page-header.component.scss'],
 })
 export class PageHeaderComponent {
+  constructor(public authService: AuthService, private router: Router) {}
 
-  constructor(public authService: AuthService,
-              private router: Router,
-              private httpCallService: HttpCallService){}
-
-
-  logout(){
+  logout() {
     this.authService.logout();
-    this.router.navigateByUrl('/login')
+    this.router.navigateByUrl('/login');
   }
 
-  handleProject(){
-    this.router.navigateByUrl('/add-project')
+  handleProject() {
+    this.router.navigateByUrl('/add-project');
   }
 
-  handleMachine(){
-    this.router.navigateByUrl('/add-machine')
+  handleMachine() {
+    this.router.navigateByUrl('/add-machine');
+  }
+
+  home() {
+    this.router.navigateByUrl('/home');
   }
 }

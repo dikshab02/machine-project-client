@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-  // login_flag: boolean = false;
-  isAdmin : boolean = true;
+  isAdmin: boolean = true;
 
-  constructor() { }
+  constructor() {}
 
-  login(userInfo: string){
-      localStorage.setItem('LOGIN_USER',userInfo);
+  login(userInfo: string) {
+    localStorage.setItem('LOGIN_USER', userInfo);
   }
 
   isLoggedIn() {
@@ -21,18 +20,16 @@ export class AuthService {
     localStorage.removeItem('LOGIN_USER');
   }
 
-  isLoggedOut(){
+  isLoggedOut() {
     return localStorage.getItem('LOGIN_USER') == null;
   }
 
   isAdminCheck() {
     const LOGIN_USER = localStorage.getItem('LOGIN_USER');
-    if(LOGIN_USER)
-    {
+    if (LOGIN_USER) {
       const loginUser = JSON.parse(LOGIN_USER);
       return loginUser.isAdmin === 'true';
     }
-    return false
+    return false;
   }
-
 }

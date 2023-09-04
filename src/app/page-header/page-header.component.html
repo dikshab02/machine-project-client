@@ -1,12 +1,17 @@
 <div class="container-fluid" *ngIf="authService.isLoggedIn()">
+  <button mat-icon-button (click)="home()" class="button-icon">
+    <mat-icon>home</mat-icon>
+  </button>
+  <div class="spacer"></div>
   <div class="add" *ngIf="!authService.isAdminCheck()">
     <button mat-raised-button (click)="handleProject()">Add Project</button>
-    <button mat-raised-button (click)="logout()">Logout</button>
   </div>
   <div class="add" *ngIf="authService.isAdminCheck()">
     <button mat-raised-button (click)="handleMachine()">Add Machine</button>
-    <button mat-raised-button (click)="logout()">Logout</button>
   </div>
+  <button mat-icon-button (click)="logout()" class="button-icon">
+    <mat-icon>logout</mat-icon>
+  </button>
 </div>
 <div class="container-fluid" *ngIf="!authService.isLoggedIn()">
   <h1>Login Form</h1>
